@@ -15,7 +15,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 songplay_table_create = ("""
 CREATE TABLE songplays(
-             song_id int PRIMARY KEY,
+             songplay_id int PRIMARY KEY,
              start_time timestamp,
              user_id  varchar NOT NULL,
              level varchar,
