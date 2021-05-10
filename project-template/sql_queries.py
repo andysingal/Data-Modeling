@@ -15,14 +15,14 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 songplay_table_create = ("""
 CREATE TABLE songplays(
-             songplay_id int PRIMARY KEY,
-             start_time timestamp,
-             user_id  varchar NOT NULL,
-             level varchar,
-             song_id varchar,
-             artist_id varchar,
-             session_id  int, 
-             location    varchar,
+             songplay_id int PRIMARY KEY,\
+             start_time timestamp,\
+             user_id  varchar NOT NULL,\
+             level varchar,\
+             song_id varchar,\
+             artist_id varchar,\
+             session_id  int, \
+             location    varchar,\
               user_agent  varchar
 )
 """)
@@ -33,10 +33,10 @@ CREATE TABLE songplays(
 user_table_create = ("""
 CREATE TABLE users 
     (
-        user_id    varchar PRIMARY KEY,
-        first_name varchar, 
-        last_name  varchar, 
-        gender     varchar, 
+        user_id    varchar PRIMARY KEY,\
+        first_name varchar,\
+        last_name  varchar,\ 
+        gender     varchar,\
         level      varchar
     )
 """)
@@ -48,10 +48,10 @@ song_table_create = ("""
 
 CREATE TABLE songs 
     (
-        song_id   varchar PRIMARY KEY,
-        title     varchar, 
-        artist_id varchar, 
-        year      int, 
+        song_id   varchar PRIMARY KEY,\
+        title     varchar,\
+        artist_id varchar,\
+        year      int,\
         duration  float
     )
 """)
@@ -59,10 +59,10 @@ CREATE TABLE songs
 artist_table_create = ("""
 CREATE TABLE artists 
     (
-        artist_id varchar PRIMARY KEY,
-        name      varchar, 
-        location  varchar, 
-        latitude  varchar, 
+        artist_id varchar PRIMARY KEY,\
+        name      varchar,\
+        location  varchar,\
+        latitude  varchar,\ 
         longitude varchar
     )
 
@@ -71,12 +71,12 @@ CREATE TABLE artists
 time_table_create = ("""
 CREATE TABLE time 
     (
-        start_time timestamp PRIMARY KEY, 
-        hour       int, 
-        day        int,
-        week       int, 
-        month      int, 
-        year       int, 
+        start_time timestamp PRIMARY KEY,\
+        hour       int,\
+        day        int,\
+        week       int,\
+        month      int,\
+        year       int,\
         weekday    varchar
 )
 """)
