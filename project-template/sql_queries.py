@@ -82,6 +82,7 @@ CREATE TABLE time
 """)
 
 # INSERT RECORDS
+#https://www.postgresql.org/docs/9.5/sql-insert.html
 
 songplay_table_insert = (""" INSERT INTO songplays 
                              (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)  
