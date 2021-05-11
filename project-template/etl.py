@@ -55,9 +55,7 @@ def process_log_file(cur, filepath):
         cur.execute(user_table_insert, row)
 
     # insert songplay records
-    idx = -1
     for index, row in df.iterrows():
-        idx += 1
         # get songid and artistid from song and artist tables
         cur.execute(song_select, (row.song, row.artist, row.length))
         results = cur.fetchone()
@@ -68,7 +66,7 @@ def process_log_file(cur, filepath):
             songid, artistid = None, None
 
         # insert songplay record
-        songplay_data = (idx, row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
+        songplay_data = [row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent]
         cur.execute(songplay_table_insert, songplay_data)
 
 
