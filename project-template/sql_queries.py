@@ -15,7 +15,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 songplay_table_create = ("""
 CREATE TABLE songplays(
-             songplay_id int PRIMARY KEY,\
+             songplay_id Serial PRIMARY KEY,\
              start_time timestamp,\
              user_id  varchar NOT NULL,\
              level varchar,\
@@ -85,12 +85,9 @@ CREATE TABLE time
 #https://www.postgresql.org/docs/9.5/sql-insert.html
 
 songplay_table_insert = (""" INSERT INTO songplays 
-                             (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)  
-                             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)  
-                             ON CONFLICT (songplay_id) DO UPDATE SET  
-                             (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent) =   
-                             (EXCLUDED.start_time, EXCLUDED.user_id, EXCLUDED.level, EXCLUDED.song_id, EXCLUDED.artist_id, EXCLUDED.session_id, 
-                              EXCLUDED.location, EXCLUDED.user_agent)
+                             (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)  
+                             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)  
+                            
 
 """)
 
